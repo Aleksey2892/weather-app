@@ -1,0 +1,31 @@
+.detailsBox {
+  padding: 10px 30px;
+  border: 1px solid rgb(255, 173, 173);
+  border-radius: 5px;
+
+  @media screen and (max-width: 480px) {
+    text-align: center;
+
+    span {
+      display: block;
+      border-bottom: 1px solid rgb(187, 187, 187);
+    }
+  }
+}
+
+.property {
+  margin-bottom: 10px;
+
+  span {
+    color: rgb(192, 28, 28);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.aboutTargetDay {
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgb(138, 138, 138);
+}

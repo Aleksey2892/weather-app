@@ -1,0 +1,83 @@
+{
+  "numorder": { "valueNum": 1, "valueStr": "00001" },
+  "contractors": [
+    {
+      "id": 1,
+      "firstName": "Максим",
+      "secondName": "Скипин",
+      "thirdName": "Сергеевич",
+      "phoneNumber": "+38 066 202 53 90",
+      "phoneNumberTwo": "+98 066 202 53 90",
+      "email": "maks@gmail.com",
+      "city": "Бровары",
+      "newPostNumber": 13,
+      "debt": 0
+    }
+  ],
+  "products": [
+    {
+      "art": 85080,
+      "prices": {
+        "retail": 20,
+        "wholesale": 35
+      },
+      "dimensions": "20х20х50"
+    },
+    {
+      "art": 85081,
+      "prices": {
+        "retail": 25,
+        "wholesale": 40
+      },
+      "dimensions": "20х20х50"
+    },
+    {
+      "art": 85082,
+      "prices": {
+        "retail": 30,
+        "wholesale": 45
+      },
+      "dimensions": "20х20х50"
+    },
+    {
+      "art": 85083,
+      "prices": {
+        "retail": 35,
+        "wholesale": 50
+      },
+      "dimensions": "20х20х50"
+    }
+  ],
+  "orders": [
+    {
+      "id": "00001",
+      "numOrder": "00001",
+      "name": "Григоренко Алексей Романович",
+      "positions": 10,
+      "totalQuantity": 100,
+      "sum": 1000,
+      "prepayment": 100,
+      "products": []
+    },
+    {
+      "id": "00002",
+      "numOrder": "00002",
+      "name": "Григоренко Алексей Романович",
+      "positions": 20,
+      "totalQuantity": 200,
+      "sum": 2000,
+      "prepayment": 200,
+      "products": []
+    },
+    {
+      "id": "00003",
+      "numOrder": "00003",
+      "name": "Григоренко Алексей Романович",
+      "positions": 30,
+      "totalQuantity": 300,
+      "sum": 3000,
+      "prepayment": 300,
+      "products": []
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+.appWrapper {
+  margin: 0 auto;
+  padding: 40px 10px;
+  max-width: 768px;
+}
+
+.titleApp {
+  text-align: center;
+  margin-bottom: 40px;
+  color: rgb(255, 173, 173);
+  padding: 5px 5px;
+  border-radius: 5px;
+  box-shadow: 0 0px 10px 5px;
+  font-size: 20px;
+
+  a {
+    text-decoration: underline;
+    transition: all 0.25s;
+
+    &:hover {
+      color: blue;
+    }
+  }
+}
+
+.description {
+  margin-top: 20px;
+}
+
+.descrBtn {
+  margin-left: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background-color: transparent;
+  color: blue;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    background-color: rgb(219, 219, 255);
+    color: palevioletred;
+  }
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  width: 100%;
+  text-align: center;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.button {
+  min-width: 80px;
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: rgb(255, 173, 173);
+  outline: none;
+  cursor: pointer;
+  transition: all 0.25s;
+
+  &:hover {
+    background-color: rgb(255, 36, 36);
+    color: #ffffff;
+  }
+}
+
+.devName {
+  margin-top: 10px;
+  font-size: 11px;
+  color: rgb(196, 196, 196);
+  text-align: right;
+
+  a {
+    text-decoration: underline;
+    transition: all 0.25s;
+
+    &:hover {
+      color: blue;
+    }
+  }
+}

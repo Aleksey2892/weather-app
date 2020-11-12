@@ -1,0 +1,56 @@
+.daysWeatherBox {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  @media screen and (max-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.about {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.dayBox {
+  padding: 10px 0;
+  width: 150px;
+  text-align: center;
+  cursor: pointer;
+
+  border: 1px solid rgb(255, 173, 173);
+  border-radius: 5px;
+  transition: all 0.25s;
+
+  &:hover {
+    background-color: bisque;
+  }
+
+  @media screen and (max-width: 480px) {
+    display: flex;
+    width: 280px;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.iconBox {
+  display: flex;
+  justify-content: center;
+}
+
+.imageIcon {
+  max-width: 100px;
+}
+
+.titleDay {
+  margin-bottom: 10px;
+}
+
+.temp {
+  color: rgb(192, 28, 28);
+}
