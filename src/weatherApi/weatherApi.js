@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'http://api.openweathermap.org';
+axios.defaults.baseURL = 'https://api.openweathermap.org';
 
 const ApiKey = '889aa1433777fac2383867e84807139f';
 
