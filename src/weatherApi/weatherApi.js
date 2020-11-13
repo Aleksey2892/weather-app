@@ -1,4 +1,5 @@
 import axios from 'axios';
+import notification from '../helpers/toastrSetting';
 
 axios.defaults.baseURL = 'https://api.openweathermap.org';
 
@@ -12,6 +13,17 @@ const getWeather = async citySearch => {
 
     return data;
   } catch (error) {
+    if (error.message === 'Request failed with status code 404') {
+      notification.error(
+        'Введите корректные данные и повторите попытку',
+        `Город " ${citySearch} " не найден! :(`,
+      );
+
+      return;
+    }
+
+    notification.error('Что-то пошло не так! :(');
+
     console.error(error);
   }
 };

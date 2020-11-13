@@ -1,17 +1,18 @@
 import React from 'react';
-
 import weatherApi from '../../weatherApi/weatherApi';
 import WeatherDays from '../WeatherDays/WeatherDays';
+import RiseLoader from 'react-spinners/RiseLoader';
 import s from './App.module.scss';
 
 export default class App extends React.Component {
-  state = { city: '', data: null };
+  state = { city: '', data: null, loader: false };
 
   handleSearchPrompt = async () => {
+    this.setState({ loader: true });
     const data = await weatherApi.getWeather('Kyiv');
 
     if (data) this.setState({ data });
-    this.setState({ city: '' });
+    this.setState({ city: '', loader: false });
   };
 
   handleSearchCity = value => {
@@ -24,20 +25,20 @@ export default class App extends React.Component {
 
   handleSubmitCity = async evt => {
     evt.preventDefault();
+    this.setState({ data: null, loader: true });
 
     if (!this.state.city) return;
 
     const data = await weatherApi.getWeather(this.state.city);
 
-    console.log(data);
-
     if (data) this.setState({ data });
-    this.setState({ city: '' });
+    this.setState({ city: '', loader: false });
   };
 
   render() {
     const { city, data } = this.state;
     const isShowData = data;
+    const isShowLoader = this.state.loader;
 
     return (
       <div className={s.appWrapper}>
@@ -69,7 +70,7 @@ export default class App extends React.Component {
           </button>
         </form>
 
-        {!isShowData && (
+        {!isShowData && !isShowLoader && (
           <div className={s.description}>
             Введите город латиницей (англ. раскладка) в поле ввода, например:
             <button className={s.descrBtn} onClick={this.handleSearchPrompt}>
@@ -78,7 +79,19 @@ export default class App extends React.Component {
           </div>
         )}
 
-        {isShowData && <WeatherDays data={data.list} />}
+        {isShowLoader && (
+          <div className={s.loaderBox}>
+            <span>Загрузка данных...</span>
+            <RiseLoader
+              loading={isShowLoader}
+              color={'#ffadad'}
+              size={35}
+              margin={20}
+            />
+          </div>
+        )}
+
+        {isShowData && <WeatherDays allData={data} />}
 
         <div className={s.devName}>
           <a

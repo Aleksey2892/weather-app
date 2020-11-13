@@ -1,45 +1,33 @@
 import React from 'react';
 import s from './WeatherDetails.module.scss';
 
-export default function WeatherDetails({ details }) {
-  const wind = { ...details.wind };
-  const main = { ...details.main };
-  const clouds = { ...details.clouds };
-  // const weather = { ...details.weather.icon };
+export default function WeatherDetails({ details, whatTheDay, cityName }) {
+  const { pop, wind, main, clouds } = details;
 
-  console.log(details);
-
-  // console.log(details.whatTheDay);
-
-  const changeAboutDay = idx => {
-    if (idx === 0) return 'Сегодняшний день';
-
-    if (idx === 1) return 'Завтрашний день';
-
-    if (idx === 2) return 'Послезавтра';
-
-    if (idx === 3) return 'Через 2 дня';
-
-    if (idx === 4) return 'Через 3 дня';
-
-    return 'Сегодняшний день';
+  const changeTargetDay = idx => {
+    switch (idx) {
+      case 0:
+        return 'Сегодняшний день';
+      case 1:
+        return 'Завтрашний день';
+      case 2:
+        return 'Послезавтра';
+      case 3:
+        return 'Через 2 дня';
+      case 4:
+        return 'Через 3 дня';
+      default:
+        return 'Сегодняшний день';
+    }
   };
-
-  const targetDay = changeAboutDay(details.whatTheDay);
-
-  // const pop = details[0].pop;
-  // const deg = details[0].wind.deg;
-  // const speed = details[0].wind.speed;
-  // const temp = details[0].main.temp;
-  // const pressure = details[0].main.grnd_level;
-  // const humidity = details[0].main.humidity;
-  // const clouds = details[0].clouds.all;
 
   return (
     <div className={s.detailsBox}>
-      <h3 className={s.aboutTargetDay}>Подробности. {targetDay}</h3>
+      <h3 className={s.aboutTargetDay}>
+        Подробности: <span>{cityName}</span>. {changeTargetDay(whatTheDay)}
+      </h3>
       <p className={s.property}>
-        Вероятность выпадения осадков: <span>{details.pop}%</span>
+        Вероятность выпадения осадков: <span>{pop}%</span>
       </p>
       <p className={s.property}>
         Направление ветра: <span>{wind.deg} градус(ов)</span>
