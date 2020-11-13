@@ -24,7 +24,7 @@ export default function WeatherDetails({ details, whatTheDay, cityName }) {
   return (
     <div className={s.detailsBox}>
       <h3 className={s.aboutTargetDay}>
-        Подробности: <span>{cityName}</span>. {changeTargetDay(whatTheDay)}
+        Подробности: <span>{cityName}</span> {changeTargetDay(whatTheDay)}
       </h3>
       <p className={s.property}>
         Вероятность выпадения осадков: <span>{pop}%</span>

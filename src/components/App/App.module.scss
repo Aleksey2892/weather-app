@@ -2,6 +2,10 @@
   margin: 0 auto;
   padding: 40px 10px;
   max-width: 768px;
+
+  @media screen and (max-width: 480px) {
+    padding: 20px 10px 40px;
+  }
 }
 
 .titleApp {
@@ -26,6 +30,10 @@
 
 .description {
   margin-top: 20px;
+
+  @media screen and (max-width: 480px) {
+    font-size: 13px;
+  }
 }
 
 .descrBtn {
@@ -41,6 +49,10 @@
   &:hover {
     background-color: rgb(219, 219, 255);
     color: palevioletred;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 16px;
   }
 }
 
